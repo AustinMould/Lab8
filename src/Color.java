@@ -15,6 +15,14 @@ public class Color {
 		this.b = b;
 	}
 	
+	public static Color[] values() {
+		
+	}
+	
+	public static Color valueOf(String name) {
+		
+	}
+	
 	public int getR() {
 		return r;
 	}

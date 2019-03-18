@@ -12,6 +12,14 @@ public class GamePiece {
 		this.priority = priority;
 	}
 	
+	public static GamePiece[] values() {
+		
+	}
+	
+	public static GamePiece valueOf(String name) {
+		
+	}
+	
 	public Color getColor() {
 		return this.appearance.getColor();
 	}
@@ -21,7 +29,12 @@ public class GamePiece {
 	}
 	
 	public GamePiece movesFirst(GamePiece a, GamePiece b) {
-		
+		if (a.priority < b.priority) {
+			return a;
+		}
+		else {
+			return b;
+		}
 	}
 	
 	public String toString() {
