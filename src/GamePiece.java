@@ -1,7 +1,4 @@
-
-public class GamePiece {
-
-	public enum gamePiece {RED_RACER, BLUE_RACER, MAGENTA_RACER, RED_THIMBLE, BLUE_BOOT, GREEN_BOOT, YELLOW_BOOT}
+public enum GamePiece {RED_RACER, BLUE_RACER, MAGENTA_RACER, RED_THIMBLE, BLUE_BOOT, GREEN_BOOT, YELLOW_BOOT;
 	
 	private GamePieceAppearance appearance;
 	
@@ -10,14 +7,6 @@ public class GamePiece {
 	private GamePiece(GamePieceAppearance appearance, int priority) {
 		this.appearance = appearance;
 		this.priority = priority;
-	}
-	
-	public static GamePiece[] values() {
-		
-	}
-	
-	public static GamePiece valueOf(String name) {
-		
 	}
 	
 	public Color getColor() {

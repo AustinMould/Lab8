@@ -1,17 +1,7 @@
+public enum Shape{THIMBLE, BOOT, RACECAR;
 
-public class Shape {
-
-	public enum shapeType{THIMBLE, BOOT, RACECAR}
-	
-	public static Shape[] values() {
-		
-	}
-	
-	public static Shape valueOf(String name) {
-		
-	}
-	
+	@Override
 	public String toString() {
-		
+		return super.toString().toLowerCase();
 	}
 }
