@@ -20,7 +20,7 @@ public enum GamePiece {RED_RACER(new GamePieceAppearance(Color.RED, Shape.RACECA
 		return this.appearance.getShape();
 	}
 	
-	public GamePiece movesFirst(GamePiece a, GamePiece b) {
+	public static GamePiece movesFirst(GamePiece a, GamePiece b) {
 		if (a.priority < b.priority) {
 			return a;
 		}
