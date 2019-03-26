@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.ListIterator;
 import java.util.Set;
@@ -84,10 +85,18 @@ public class BoardGame {
 	}
 	
 	public Set<Location> getPlayerLocations() {
-		return (Set<Location>) playerLocations.values();
+		Set<Location> result = new HashSet<Location>();
+		for(String person : playerLocations.keySet()) {
+			result.add(playerLocations.get(person));
+		}
+		return result;
 	}
 	
 	public Set<GamePiece> getPlayerPieces() {
-		return (Set<GamePiece>) playerPieces.values();
+		Set<GamePiece> result = new HashSet<GamePiece>();
+		for(String person : playerPieces.keySet()) {
+			result.add(playerPieces.get(person));
+		}
+		return result;
 	}
 }

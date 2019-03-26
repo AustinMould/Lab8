@@ -95,5 +95,9 @@ public class BoardGameTest {
 		Assert.assertEquals("Wrong location" , greatGame.getPlayersLocation("Kevin"), Location.KITCHEN);
 		Assert.assertEquals("Wrong location" , greatGame.getPlayersLocation("Troy"), Location.CONSERVATORY);
 		Assert.assertEquals("Wrong location" , greatGame.getPlayersLocation("Kevin"), Location.KITCHEN);
+		
+		greatGame.getPlayers();
+		greatGame.getPlayerLocations();
+		greatGame.getPlayerPieces();
 	}
 }
