@@ -31,6 +31,6 @@ public enum GamePiece {RED_RACER(new GamePieceAppearance(Color.RED, Shape.RACECA
 	
 	@Override
 	public String toString() {
-		return String.format("%s: a %s %s with priority %d", super.toString(), this.getColor(), this.getShape(), priority);
+		return String.format("%s: a %s %s with priority %d", super.toString(), this.getColor().toString().toLowerCase(), this.getShape(), priority);
 	}
 }

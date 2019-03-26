@@ -31,7 +31,7 @@ public class BoardGameTest {
 		
 		Assert.assertEquals("Wrong color", piece.getColor(), Color.RED);
 		Assert.assertEquals("Wrong shape", piece.getShape(), Shape.THIMBLE);
-		Assert.assertEquals("ToString incorrect", piece.toString(), "RED_THIMBLE: a RED thimble with priority 10");
+		Assert.assertEquals("ToString incorrect", piece.toString(), "RED_THIMBLE: a red thimble with priority 10");
 	}
 	@Test
 	public void BoardGameConstructorTest() {

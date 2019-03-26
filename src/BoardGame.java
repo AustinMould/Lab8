@@ -15,7 +15,7 @@ public class BoardGame {
 	}
 	
 	public boolean addPlayer (String playerName, GamePiece gamePiece, Location initialLocation) {
-		boolean isNewPlayer = !playerPieces.containsKey(playerName);;
+		boolean isNewPlayer = !playerPieces.containsKey(playerName) && !playerPieces.containsValue(gamePiece);;
 		if(isNewPlayer) {
 			playerPieces.putIfAbsent(playerName, gamePiece);
 			playerLocations.putIfAbsent(playerName, initialLocation);
