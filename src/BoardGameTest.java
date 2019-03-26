@@ -32,6 +32,9 @@ public class BoardGameTest {
 		Assert.assertEquals("Wrong color", piece.getColor(), Color.RED);
 		Assert.assertEquals("Wrong shape", piece.getShape(), Shape.THIMBLE);
 		Assert.assertEquals("ToString incorrect", piece.toString(), "RED_THIMBLE: a red thimble with priority 10");
+		
+		GamePiece piece2 = GamePiece.BLUE_BOOT;
+		Assert.assertEquals("Incorrect priority", GamePiece.movesFirst(piece2, piece), piece2);
 	}
 	@Test
 	public void BoardGameConstructorTest() {
@@ -67,9 +70,11 @@ public class BoardGameTest {
 		
 		Assert.assertEquals("Player name incorrect", "Brady", greatestGame.getPlayerWithGamePiece(GamePiece.BLUE_RACER));
 		Assert.assertEquals("Player name incorrect", "Dalton", greatestGame.getPlayerWithGamePiece(GamePiece.BLUE_BOOT));
+		Assert.assertEquals("Piece found when null", null, greatestGame.getPlayerWithGamePiece(GamePiece.RED_RACER));
 		
 		Assert.assertEquals("Player name incorrect", Location.LOUNGE, greatestGame.getPlayersLocation("Brady"));
 		Assert.assertEquals("Player name incorrect", Location.HALL, greatestGame.getPlayersLocation("Dalton"));
+		
 	}
 	@Test
 	public void LocationMovementTest() {
@@ -96,6 +101,7 @@ public class BoardGameTest {
 		Assert.assertEquals("Wrong location" , greatGame.getPlayersLocation("Troy"), Location.CONSERVATORY);
 		Assert.assertEquals("Wrong location" , greatGame.getPlayersLocation("Kevin"), Location.KITCHEN);
 		
+		greatGame.getGamePiecesAtLocation(Location.KITCHEN);
 		greatGame.getPlayers();
 		greatGame.getPlayerLocations();
 		greatGame.getPlayerPieces();
