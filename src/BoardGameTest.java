@@ -44,7 +44,7 @@ public class BoardGameTest {
 		Assert.assertEquals("Player name incorrect", Location.HALL, greatestGame.getPlayersLocation("Dalton"));
 	}
 	@Test
-	public void collectionsTest() {
+	public void LocationMovementTest() {
 		BoardGame greatGame = new BoardGame();
 		greatGame.addPlayer("Kevin", GamePiece.RED_THIMBLE, Location.BILLIARD_ROOM);
 		greatGame.addPlayer("Micah", GamePiece.MAGENTA_RACER, Location.BILLIARD_ROOM);
@@ -55,5 +55,17 @@ public class BoardGameTest {
 		Assert.assertEquals("Player name incorrect", "Kevin", poolSharks.get(0));
 		Assert.assertEquals("Player name incorrect", "Micah", poolSharks.get(1));
 		Assert.assertEquals("Player name incorrect", "Troy", poolSharks.get(2));
+		
+		String[] poolBros = {"Troy", "Micah"};
+		Location[] newLocs = {Location.KITCHEN, Location.CONSERVATORY};
+		greatGame.movePlayer("Kevin", Location.KITCHEN);
+		String[] playersAtNewLocs = greatGame.moveTwoPlayers(poolBros, newLocs);
+		
+		Assert.assertEquals("Wrong player name", poolBros[0], "Micah");
+		Assert.assertEquals("Wrong player name", poolBros[1], "Troy");
+		
+		Assert.assertEquals("Wrong location" , greatGame.getPlayersLocation("Kevin"), Location.KITCHEN);
+		Assert.assertEquals("Wrong location" , greatGame.getPlayersLocation("Troy"), Location.CONSERVATORY);
+		Assert.assertEquals("Wrong location" , greatGame.getPlayersLocation("Kevin"), Location.KITCHEN);
 	}
 }

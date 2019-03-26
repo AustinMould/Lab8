@@ -40,17 +40,17 @@ public class BoardGame {
 	}
 	
 	public String[] moveTwoPlayers (String [] playerNames, Location[] newLocations) {
-		GamePiece gamePiece1 = this.getPlayerGamePiece(playerNames[1]);
-		GamePiece gamePiece2 = this.getPlayerGamePiece(playerNames[2]);
+		GamePiece gamePiece1 = this.getPlayerGamePiece(playerNames[0]);
+		GamePiece gamePiece2 = this.getPlayerGamePiece(playerNames[1]);
 		
 		GamePiece firstPiece = GamePiece.movesFirst(gamePiece1, gamePiece2);
 		String temp = getPlayerWithGamePiece(firstPiece);
-		if (temp.equals(playerNames[2])) {
-			playerNames[2] = playerNames[1];
-			playerNames[1] = temp;
+		if (temp.equals(playerNames[1])) {
+			playerNames[1] = playerNames[0];
+			playerNames[0] = temp;
 		}
+		this.movePlayer(playerNames[0], newLocations[0]);
 		this.movePlayer(playerNames[1], newLocations[1]);
-		this.movePlayer(playerNames[2], newLocations[2]);
 		
 		return playerNames;
 		
