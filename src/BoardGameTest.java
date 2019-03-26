@@ -6,6 +6,22 @@ import org.junit.Test;
 public class BoardGameTest {
 
 	@Test
+	public void ColorTest() {
+		Color col1 = Color.CYAN;
+		Color col2 = Color.RED;
+		
+		Assert.assertEquals("Incorrect G value", col1.getG(), 255);
+		Assert.assertEquals("Incorrect B value", col1.getB(), 255);
+		Assert.assertEquals("Incorrect R value", col1.getR(), 0);
+		
+		Assert.assertEquals("Incorrect R value", col2.getR(), 255);
+	}
+	
+	@Test
+	public void ShapeTest() {
+		
+	}
+	@Test
 	public void BoardGameConstructorTest() {
 	BoardGame bestGame = new BoardGame();
 	
