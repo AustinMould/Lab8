@@ -15,11 +15,23 @@ public class BoardGameTest {
 		Assert.assertEquals("Incorrect R value", col1.getR(), 0);
 		
 		Assert.assertEquals("Incorrect R value", col2.getR(), 255);
+		Assert.assertEquals("Incorrect B value", col2.getB(), 0);
+		Assert.assertEquals("Incorrect G value", col2.getG(), 0);
 	}
 	
 	@Test
 	public void ShapeTest() {
+		Shape shape = Shape.BOOT;
+		Assert.assertEquals("boot", shape.toString());
+	}
+	
+	@Test
+	public void GamePieceAndAppearanceTest() {
+		GamePiece piece = GamePiece.RED_THIMBLE;
 		
+		Assert.assertEquals("Wrong color", piece.getColor(), Color.RED);
+		Assert.assertEquals("Wrong shape", piece.getShape(), Shape.THIMBLE);
+		Assert.assertEquals("ToString incorrect", piece.toString(), "RED_THIMBLE: a RED thimble with priority 10");
 	}
 	@Test
 	public void BoardGameConstructorTest() {
