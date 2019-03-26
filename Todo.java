@@ -38,7 +38,7 @@ Estimated Time (minutes):
 
 Actual Time (minutes):
 1. 001
-2.
+2. 080
 3. 002
 4. 001
 5. 002

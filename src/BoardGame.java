@@ -27,7 +27,12 @@ public class BoardGame {
 	}
 	
 	public String getPlayerWithGamePiece (GamePiece gamePiece) {
-		
+		for(String person : playerPieces.keySet()) {
+			if (gamePiece.equals(getPlayerGamePiece(person))) {
+				return person;
+			}
+		}
+		return null;
 	}
 	
 	public void movePlayer (String playerName, Location newLocation) {
@@ -56,22 +61,33 @@ public class BoardGame {
 	}
 	
 	public ArrayList<String> getPlayersAtLocation(Location loc) {
-		
+		ArrayList<String> peopleAtLoc = new ArrayList<String>();
+		for(String person : playerLocations.keySet()) {
+			if (loc.equals(getPlayersLocation(person))) {
+				peopleAtLoc.add(person);
+			}
+		}
+		return peopleAtLoc;
 	}
 	
 	public ArrayList<GamePiece> getGamePiecesAtLocation(Location loc) {
-		
+		ArrayList<GamePiece> piecesAtLoc = new ArrayList<GamePiece>();
+		ArrayList<String> playersAtLoc = this.getPlayersAtLocation(loc);
+		for(String person : playersAtLoc) {
+			piecesAtLoc.add(this.getPlayerGamePiece(person));
+		}
+		return piecesAtLoc;
 	}
 	
 	public Set<String> getPlayers() {
-		
+		return playerPieces.keySet();
 	}
 	
 	public Set<Location> getPlayerLocations() {
-		
+		return (Set<Location>) playerLocations.values();
 	}
 	
-	public Set<GamePieces> getPlayerPieces() {
-		
+	public Set<GamePiece> getPlayerPieces() {
+		return (Set<GamePiece>) playerPieces.values();
 	}
 }
