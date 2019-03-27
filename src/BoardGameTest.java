@@ -5,6 +5,9 @@ import org.junit.Test;
 
 public class BoardGameTest {
 
+	/**
+	 * Tests the getter methods of Color class
+	 */
 	@Test
 	public void ColorTest() {
 		Color col1 = Color.CYAN;
@@ -19,12 +22,18 @@ public class BoardGameTest {
 		Assert.assertEquals("Incorrect G value", col2.getG(), 0);
 	}
 	
+	/**
+	 * Tests the toString of Shape class
+	 */
 	@Test
 	public void ShapeTest() {
 		Shape shape = Shape.BOOT;
 		Assert.assertEquals("boot", shape.toString());
 	}
 	
+	/**
+	 * Tests getters and toString methods of GameAppearance class. Also tests the GamePiece moves first class
+	 */
 	@Test
 	public void GamePieceAndAppearanceTest() {
 		GamePiece piece = GamePiece.RED_THIMBLE;
@@ -36,6 +45,10 @@ public class BoardGameTest {
 		GamePiece piece2 = GamePiece.BLUE_BOOT;
 		Assert.assertEquals("Incorrect priority", GamePiece.movesFirst(piece2, piece), piece2);
 	}
+	
+	/**
+	 * Tests BoardGame constructor and add player methods. Tests adding new and existing players
+	 */
 	@Test
 	public void BoardGameConstructorTest() {
 	BoardGame bestGame = new BoardGame();
@@ -59,6 +72,9 @@ public class BoardGameTest {
 	
 	}
 	
+	/**
+	 * Tests the getter methods of BoardGame class.
+	 */
 	@Test
 	public void getterTests() {
 		BoardGame greatestGame = new BoardGame();
@@ -76,6 +92,10 @@ public class BoardGameTest {
 		Assert.assertEquals("Player name incorrect", Location.HALL, greatestGame.getPlayersLocation("Dalton"));
 		
 	}
+	
+	/**
+	 * Tests methods that move player pieces to new locations
+	 */
 	@Test
 	public void LocationMovementTest() {
 		BoardGame greatGame = new BoardGame();
